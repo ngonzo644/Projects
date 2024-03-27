@@ -12,7 +12,7 @@ class Controller:
         pygame.init()
         self.display=pygame.display.set_mode()
         self.width,self.height=pygame.display.get_window_size()
-        self.background=pygame.image.load("assets/Space001.png")
+        self.background=pygame.image.load("Space Invaders clone/assets/Space001.png")
         self.bg_rect = self.background.get_rect(topleft = (0,0))
         self.clock = pygame.time.Clock()
         self.clock.tick(30)
@@ -26,7 +26,7 @@ class Controller:
         that handles the 'shootable' laser and the laser collision with aliens. Finally it checks
         for player movement and if all aliens have been cleared out. 
         """
-        player1=Player(500,650,"assets/image.png")
+        player1=Player(500,650,"Space Invaders clone/assets/image.png")
         player1_group=pygame.sprite.Group()
         player1_group.add(player1)
         laser_group = pygame.sprite.Group()
@@ -91,7 +91,7 @@ class Controller:
         """
         for alien in range(num_aliens):
             ran_x,ran_y = self.rand(1400,500)
-            alien = Alien(ran_x, ran_y, "assets/spaceship.png")
+            alien = Alien(ran_x, ran_y, "Space Invaders clone/assets/spaceship.png")
             alien_group.add(alien)
         return alien_group
     
