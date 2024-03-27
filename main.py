@@ -1,27 +1,16 @@
-from book import Book
-from movie import Movie
+import pygame
+from src.controller import Controller
+#import your controller
 
 def main():
-    """
-    Asks' for input on what book the user would like to see is an adaptation. 
-    Prints the movie information if found.
+    pygame.init()
+    #Create an instance on your controller object
+    controller=Controller()
+    #Call your mainloop
+    controller.mainloop()
     
-    """
-    query=input("What book do you want to search for?")
-    example=Book(query, "AIzaSyAm5Hq7hWZJkH0aDTK09eoa7UOyC55DNgI")
+    ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######
 
-    title,author=example.get()
-
-    print(f'Book:{title}, Author: {author}')
-
-    example2=Movie(title,"ba4435be")
-
-    title2, year, adaptation, director=example2.get()
-
-    if(adaptation):
-        print(f'Movie:{title2} {year}, Director: {director}')
-        print("This is the adaptation!")
-    
-    
+# https://codefather.tech/blog/if-name-main-python/
 if __name__ == '__main__':
     main()
